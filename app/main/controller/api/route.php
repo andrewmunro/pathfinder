@@ -218,13 +218,13 @@ class Route extends \Controller\AccessController {
                         GROUP_CONCAT( NULLIF(map_sys_inner.solarSystemName, NULL) SEPARATOR ':')
                     FROM
                         mapsolarsystemjumps map_jump INNER JOIN
-                        mapsolarsystems map_sys_inner ON
+                        mapSolarSystems map_sys_inner ON
                             map_sys_inner.solarSystemID = map_jump.toSolarSystemID
                     WHERE
                         map_jump.fromSolarSystemID = map_sys.solarSystemID
                 ) system_neighbours
             FROM
-                mapsolarsystems map_sys
+                mapSolarSystems map_sys
             HAVING
               -- skip systems without neighbors (e.g. WHs)
 	          system_neighbours IS NOT NULL
