@@ -18,7 +18,7 @@ USER ${USER}
 WORKDIR /home/${USER}
 
 # Clone source
-RUN sudo git clone https://github.com/exodus4d/pathfinder.git
+RUN sudo git clone https://github.com/andrewmunro/pathfinder.git
 
 # Concat latest eve mysql dump into single file
 RUN wget https://www.fuzzwork.co.uk/dump/mysql-latest.tar.bz2
